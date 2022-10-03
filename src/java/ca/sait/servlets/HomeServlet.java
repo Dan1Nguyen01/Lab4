@@ -31,8 +31,8 @@ public class HomeServlet extends HttpServlet {
         
         String username = (String) request.getSession().getAttribute("username");
         
-        if(username != null){
-            response.sendRedirect("home");
+        if(username == null){
+            response.sendRedirect("login");
             return;
         }
         String action = request.getParameter("action");
