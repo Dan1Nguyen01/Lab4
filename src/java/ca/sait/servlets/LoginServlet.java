@@ -60,7 +60,7 @@ public class LoginServlet extends HttpServlet {
         User user =account.login(username, password);
         
         if(user != null){
-            request.getSession().setAttribute(username, username);
+            request.getSession().setAttribute("username", username);
             response.sendRedirect("home");
             return;
         }else{
